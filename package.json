@@ -1,0 +1,31 @@
+{
+  "name": "ch-scrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "agentkeepalive": "^4.1.4",
+    "app-module-path": "^2.2.0",
+    "async-http-request": "^1.0.4",
+    "async-request": "^1.2.0",
+    "axios": "^0.21.1",
+    "axios-retry": "^3.2.4",
+    "cheerio": "latest",
+    "colors": "^1.1.2",
+    "download": "^6.2.5",
+    "github-version-checker": "^1.2.0",
+    "is-valid-path": "^0.1.1",
+    "meow": "^9.0.0",
+    "ora": "^5.4.1",
+    "prompts": "^2.4.2",
+    "request": "latest",
+    "request-progress": "^3.0.0",
+    "scraping-ninja-toolkit": "^1.0.0-beta.2"
+  }
+}
