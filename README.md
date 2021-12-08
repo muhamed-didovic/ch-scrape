@@ -1,5 +1,5 @@
 # Scrape videos (course) from coursehunter.net
-[![npm](https://badgen.net/npm/v/chdown)](https://www.npmjs.com/package/chdown)
+[![npm](https://badgen.net/npm/v/ch-scrape)](https://www.npmjs.com/package/ch-scrape)
 
 ## Install
 ```sh

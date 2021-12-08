@@ -40,6 +40,16 @@
     "regenerator-runtime": "^0.13.9",
     "request": "latest",
     "request-progress": "^3.0.0",
-    "scraping-ninja-toolkit": "^1.0.0-beta.2"
+    "boolbase": "^1.0.0",
+    "css-select": "^2.0.2",
+    "css-what": "^2.1.2",
+    "domhandler": "^2.3.0",
+    "domutils": "^1.5.1",
+    "entities": "^1.1.1",
+    "es6-promise-pool": "^2.5.0",
+    "inherits": "^2.0.1",
+    "nth-check": "^1.0.2",
+    "string-format": "^2.0.0",
+    "url-parse": "^1.4.4"
   }
 }
