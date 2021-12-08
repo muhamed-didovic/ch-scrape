@@ -1,14 +1,25 @@
 {
   "name": "ch-scrape",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Scrape coursehunter.net",
   "main": "index.js",
+  "bin": {
+    "ch-scrape": "lib/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "download",
+    "nodejs",
+    "coursehunter"
+  ],
+  "author": "Muhamed Didovic (github.com/muhamed-didovic)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/muhamed-didovic/ch-scrape.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "agentkeepalive": "^4.1.4",
     "app-module-path": "^2.2.0",
