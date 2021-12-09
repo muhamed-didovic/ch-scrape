@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra')
 const Promise = require('bluebird');
 const prompts = require("prompts");
 const meow = require("meow");
@@ -124,7 +124,7 @@ const getPages = async ({ token, categories }) => {
     )
 
   allPages = allPages.flat();
-  fs.writeFileSync(`pages-${new Date().toISOString()}.json`, JSON.stringify(allPages, null, 2), 'utf8');
+  // fs.writeFileSync(`pages-${new Date().toISOString()}.json`, JSON.stringify(allPages, null, 2), 'utf8');
   spin.succeed(`Collecting pages done: ${cc}`)
   return { token, allPages };
 };
@@ -211,7 +211,8 @@ const getVideosForCourse = async ({ token, allCourses }) => {
   lessonsMsg.succeed(`Videos collected with counter: ${c}`)
   return allCourseWithVideosLessons;
 };
-const putCoursesIntoFile = (allCourseWithVideosLessons, downDir) => {
+const putCoursesIntoFile = async (allCourseWithVideosLessons, downDir) => {
+  await fs.ensureDir(downDir)
   const downloads = `courses-${new Date().toISOString()}.json`
   const fileMsg = logger.start(`Creating file with all courses`)
   fs.writeFileSync(downDir + path.sep + downloads, JSON.stringify(allCourseWithVideosLessons, null, 2), 'utf8');
@@ -234,8 +235,27 @@ const getCategoriesForDownload = async ({ token, type, url }) => {
 
   return { token, categories }
 };
-
-const downloadSelectively = async (email, password, url, downDir) => {
+const downloadSelectively = (email, password, url, downDir) => Promise
+  .resolve()
+  .then(async () => {
+    return getToken(email, password);
+  })
+  .then(token => getCourse({ token, url }))
+  .then(getVideosForCourse)
+  .then(allCourseWithVideosLessons => putCoursesIntoFile(allCourseWithVideosLessons, downDir))
+  .catch(errorHandler);
+const downloadAll = (email, password, type, url, downDir) => Promise
+  .resolve()
+  .then(async () => {
+    return getToken(email, password);
+  })
+  .then(token => getCategoriesForDownload({ token, type, url }))
+  .then(getPages)
+  .then(getCourses)
+  .then(getVideosForCourse)
+  .then(allCourseWithVideosLessons => putCoursesIntoFile(allCourseWithVideosLessons, downDir))
+  .catch(errorHandler);
+/*const downloadSelectively = async (email, password, url, downDir) => {
   try {
     await Promise
       .resolve();
@@ -260,7 +280,7 @@ const downloadAll = async (email, password, type, url, downDir) => {
   } catch (err) {
     return errorHandler(err);
   }
-};
+};*/
 
 const cli = meow(`
     Usage
