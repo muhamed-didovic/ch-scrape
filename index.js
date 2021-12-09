@@ -95,7 +95,7 @@ const getCourse = async ({ token, url }) => {
   return { token, allCourses }
 };
 const getPages = async ({ token, categories }) => {
-  let cc = 0;
+  let cc = 1;
   logger.info(`Number of urls to download from: ${categories.length}`)
   const spin = logger.start('Capturing pages')
   let allPages = await fetcher
