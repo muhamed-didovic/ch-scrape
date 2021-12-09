@@ -217,7 +217,10 @@ const putCoursesIntoFile = async (allCourseWithVideosLessons, downDir) => {
   const fileMsg = logger.start(`Creating file with all courses`)
   fs.writeFileSync(downDir + path.sep + downloads, JSON.stringify(allCourseWithVideosLessons, null, 2), 'utf8');
   fileMsg.succeed(`Videos collected in: ${downDir + path.sep + downloads}`)
-  return allCourseWithVideosLessons;
+  return {
+    courses: allCourseWithVideosLessons,
+    file   : downDir + path.sep + downloads
+  };
 };
 const getCategoriesForDownload = async ({ token, type, url }) => {
   let categories;
