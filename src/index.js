@@ -11,8 +11,8 @@ const Agent = require('agentkeepalive');
 const axios = require('axios').default;
 const axiosRetry = require('axios-retry');
 
-const createLogger = require('../src/create/createLogger')
-const getToken = require("../src/download/getToken");
+const createLogger = require('./createLogger')
+const getToken = require("./getToken");
 const { fetcher } = require('../src/scraper');
 
 const logger = createLogger()
