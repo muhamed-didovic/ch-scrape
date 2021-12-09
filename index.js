@@ -219,7 +219,7 @@ const putCoursesIntoFile = async (allCourseWithVideosLessons, downDir) => {
   fileMsg.succeed(`Videos collected in: ${downDir + path.sep + downloads}`)
   return {
     courses: allCourseWithVideosLessons,
-    file   : downDir + path.sep + downloads
+    fileName   : downDir + path.sep + downloads
   };
 };
 const getCategoriesForDownload = async ({ token, type, url }) => {
