@@ -208,7 +208,7 @@ const getVideosForCourse = async ({ token, allCourses }) => {
     }, {
       concurrency: 50
     })
-  lessonsMsg.succeed(`Videos collected with counter: ${c}`)
+  lessonsMsg.succeed(`Founded courses: ${c}`)
   return allCourseWithVideosLessons;
 };
 const putCoursesIntoFile = async (allCourseWithVideosLessons, downDir) => {
