@@ -28,6 +28,7 @@ Examples
     $ ch --all
     $ ch https://coursehunter.net/course/intermediate-typescript/ -t course
     $ ch -e user@gmail.com -p password -d path-to-directory -t source
+```
 
 ## License
 MIT
