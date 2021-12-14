@@ -203,7 +203,7 @@ const getVideosForCourse = async ({ token, allCourses }) => {
       course.chapters = lessonsData.map(lesson => lesson.file)
       course.subtitles = lessonsData
         .filter(lesson => lesson.subtitle.includes('http'))
-        .map(lesson => lesson.subtitle.split['[English]'][1])
+        .map(lesson => lesson.subtitle.includes('[English]') ? lesson.subtitle.split['[English]'][1] : lesson.subtitle)
       course.names = lessonsData.map(lesson => {
         const str = lesson.title.replace(
           /\s\|\s\d{2}:\d{2}:\d{2}/g,
