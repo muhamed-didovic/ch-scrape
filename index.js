@@ -146,8 +146,8 @@ const getCourses = async ({ token, allPages }) => {
   return { token, allCourses }
 };
 
-const getVideosForCourse = async ({ token, allCourses }) => {
-  const lessonsMsg = logger.start('start gathering videos for lessons..')
+const getVideosForCourse = async ({ token, allCourses, subtitle }) => {
+  const lessonsMsg = logger.start(`start gathering videos for lessons..`)
   let c = 0;
   const allCourseWithVideosLessons = await Promise
     .map(allCourses, async (course) => {
@@ -179,11 +179,15 @@ const getVideosForCourse = async ({ token, allCourses }) => {
       });
 
       let lessonsData = res.data;
-      course.chapters = lessonsData.map(lesson => lesson.file)
-      course.subtitles = lessonsData
-        .filter(lesson => lesson.subtitle.includes('http'))
-        .map(lesson => lesson.subtitle.includes('[English]') ? lesson.subtitle.split('[English]')[1] : lesson.subtitle)
 
+      //add subtitles
+      if (subtitle) {
+        course.subtitles = lessonsData
+          .filter(lesson => lesson.subtitle.includes('http'))
+          .map(lesson => lesson.subtitle.includes('[English]') ? lesson.subtitle.split('[English]')[1] : lesson.subtitle)
+      }
+
+      course.chapters = lessonsData.map(lesson => lesson.file)
       course.names = lessonsData.map(lesson => {
         const str = lesson.title.replace(
           /\s\|\s\d{2}:\d{2}:\d{2}/g,
@@ -233,16 +237,16 @@ const getCategoriesForDownload = async ({ token, type, url }) => {
 
   return { token, categories }
 };
-const downloadSelectively = (email, password, url, downDir) => Promise
+const downloadSelectively = (email, password, url, downDir, subtitle) => Promise
   .resolve()
   .then(async () => {
     return getToken(email, password);
   })
   .then(token => getCourse({ token, url }))
-  .then(getVideosForCourse)
+  .then(({ token, allCourses }) => getVideosForCourse({ token, allCourses, subtitle }))
   .then(allCourseWithVideosLessons => putCoursesIntoFile(allCourseWithVideosLessons, downDir))
   .catch(errorHandler);
-const downloadAll = (email, password, type, url, downDir) => Promise
+const downloadAll = (email, password, type, url, downDir, subtitle) => Promise
   .resolve()
   .then(async () => {
     return getToken(email, password);
@@ -285,11 +289,12 @@ const cli = meow(`
     $ ch <?CourseUrl|SourceUrl|CategoryUrl>
 
 Options
-    --all, -a   Get all courses.
-    --email, -e   Your email. 
+    --all, -a         Get all courses.
+    --email, -e       Your email. 
     --password, -p    Your password.
     --directory, -d   Directory to save.
-    --type, -t  source|course Type of download. 
+    --type, -t        source|course Type of download. 
+    --subtitle, -s    Download subtitles if available.
       
     Examples
       $ ch
@@ -309,10 +314,11 @@ Options
       alias: 'p'
     },
     directory: { type: 'string', alias: 'd' },//, default: process.cwd()
-    /*directory: {
-      type : 'string',
-      alias: 'd'
-    },*/
+    subtitle: {
+      type : 'boolean',
+      alias: 's',
+      default: false
+    },
     type: {
       type : 'string',
       alias: 't'
@@ -389,15 +395,22 @@ const prompt = async () => {
       initial: 0
     })
 
-  return { url: input[0], email, password, downDir, type };
+  const subtitle = flags.subtitle || await askOrExit({
+    type: 'toggle',
+    name: 'value',
+    message : `Download subtitle?`,
+    initial: flags.zip,
+    active: 'yes',
+    inactive: 'no'
+  })
 
-
+  return { url: input[0], email, password, downDir, type, subtitle };
 };
-const run = async ({ url, email, password, downDir, type }) => {
+const run = async ({ url, email, password, downDir, type, subtitle }) => {
   if (type === 'course') {
-    return downloadSelectively(email, password, url, downDir);
+    return downloadSelectively(email, password, url, downDir, subtitle);
   }
-  return downloadAll(email, password, type, url, downDir);
+  return downloadAll(email, password, type, url, downDir, subtitle);
 };
 /*(async () => {
   const { url, email, password, downDir, type } = await prompt();
