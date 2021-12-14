@@ -165,6 +165,7 @@ const getCourses = async ({ token, allPages }) => {
   };*/
   return { token, allCourses }
 };
+
 const getVideosForCourse = async ({ token, allCourses }) => {
   const lessonsMsg = logger.start('start gathering videos for lessons..')
   let c = 0;
@@ -173,6 +174,16 @@ const getVideosForCourse = async ({ token, allCourses }) => {
 
       //let courses = category.courses;
       //await Promise.map(courses, async course => {
+
+      /*[
+        {
+          "title": "1 Introduction | 00:01:40",
+          "file": "https://vss1.coursehunter.net/s/c7372a42f8e366f6891027a8755f24f0/udemy-css-complete-guide/lesson1.mp4",
+          "subtitle": "[English]https://vss1.coursehunter.net/udemy-css-complete-guide/lesson1.srt",
+          "id": "c10681"
+        },
+        ...
+      ]*/
       lessonsMsg.text = `Collecting course for: https://coursehunter.net/course/${course.id}/lessons`
       let res = await axios({
         url    : `https://coursehunter.net/course/${course.id}/lessons`,
@@ -188,8 +199,12 @@ const getVideosForCourse = async ({ token, allCourses }) => {
       });
 
       let lessonsData = res.data;
-      course.chapters = lessonsData.map((lesson) => lesson.file)
-      course.names = lessonsData.map((lesson) => {
+      console.log('lessonsData', lessonsData);
+      course.chapters = lessonsData.map(lesson => lesson.file)
+      course.subtitles = lessonsData
+        .filter(lesson => lesson.subtitle.includes('http'))
+        .map(lesson => lesson.subtitle.split['[English]'][1])
+      course.names = lessonsData.map(lesson => {
         const str = lesson.title.replace(
           /\s\|\s\d{2}:\d{2}:\d{2}/g,
           ""
