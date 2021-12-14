@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Scrape coursehunter.net",
   "main": "index.js",
   "bin": {

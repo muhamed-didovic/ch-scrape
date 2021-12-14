@@ -179,11 +179,11 @@ const getVideosForCourse = async ({ token, allCourses }) => {
       });
 
       let lessonsData = res.data;
-      console.log('lessonsData', lessonsData);
       course.chapters = lessonsData.map(lesson => lesson.file)
       course.subtitles = lessonsData
         .filter(lesson => lesson.subtitle.includes('http'))
-        .map(lesson => lesson.subtitle.includes('[English]') ? lesson.subtitle.split['[English]'][1] : lesson.subtitle)
+        .map(lesson => lesson.subtitle.includes('[English]') ? lesson.subtitle.split('[English]')[1] : lesson.subtitle)
+
       course.names = lessonsData.map(lesson => {
         const str = lesson.title.replace(
           /\s\|\s\d{2}:\d{2}:\d{2}/g,
@@ -213,8 +213,8 @@ const putCoursesIntoFile = async (allCourseWithVideosLessons, downDir) => {
   fs.writeFileSync(downDir + path.sep + downloads, JSON.stringify(allCourseWithVideosLessons, null, 2), 'utf8');
   fileMsg.succeed(`Videos collected in: ${downDir + path.sep + downloads}`)
   return {
-    courses: allCourseWithVideosLessons,
-    fileName   : downDir + path.sep + downloads
+    courses : allCourseWithVideosLessons,
+    fileName: downDir + path.sep + downloads
   };
 };
 const getCategoriesForDownload = async ({ token, type, url }) => {
