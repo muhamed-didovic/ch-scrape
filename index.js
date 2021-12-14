@@ -16,8 +16,8 @@ const getToken = require("./src/getToken");
 const { fetcher } = require('./src/scraper');
 
 const logger = createLogger()
-// const errorHandler = err => (console.log('\u001B[1K'), logger.fail(String(err)), process.exit(1))
-const errorHandler = err => console.error('err:', err)
+const errorHandler = err => (console.log('\u001B[1K'), logger.fail(String(err)), process.exit(1))
+// const errorHandler = err => console.error('err:', err)
 
 const keepaliveAgent = new Agent({
   maxSockets       : 100,
@@ -30,20 +30,6 @@ axiosRetry(axios, {
   shouldResetTimeout: true,
   retryCondition    : (_error) => true // retry no matter what
 });
-
-/*axiosRetry(axios, {
-  retries       : 3, // number of retries
-  retryDelay    : (retryCount) => {
-    console.log(`-----------------retry attempt: ${retryCount}`);
-    return retryCount*2000; // time interval between retries
-  },
-  retryCondition: (error) => {
-    console.log(`-----------------retryConditiont:`, error);
-    return true;
-    // if retry condition is not specified, by default idempotent requests are retried
-    return error.response.status === 503 || error.response.status === 502;
-  },
-});*/
 
 async function askOrExit(question) {
   const res = await prompts({ name: 'value', ...question }, { onCancel: () => process.exit(1) })
@@ -68,8 +54,6 @@ const getCourse = async ({ token, url }) => {
   const scrapingMsg = logger.start('start gathering courses from pages..')
   // Fetch the given url and return a page scraper
   const p = await fetcher.get(url, {
-    // httpAgent: new http.Agent({ keepAlive: true }),
-    // httpsAgent: new https.Agent({ keepAlive: true }),
     httpAgent : keepaliveAgent,
     httpAgents: keepaliveAgent,
     headers   : {
@@ -88,10 +72,6 @@ const getCourse = async ({ token, url }) => {
     }
   ];
   scrapingMsg.succeed(`Courses gathered: ${url}`)
-  /*return {
-    category: categories[index].split('/').pop(),
-    courses : courses
-  };*/
   return { token, allCourses }
 };
 const getPages = async ({ token, categories }) => {
