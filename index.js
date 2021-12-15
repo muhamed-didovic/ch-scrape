@@ -254,7 +254,7 @@ const downloadAll = (email, password, type, url, downDir, subtitle) => Promise
   .then(token => getCategoriesForDownload({ token, type, url }))
   .then(getPages)
   .then(getCourses)
-  .then(getVideosForCourse)
+  .then(({ token, allCourses }) => getVideosForCourse({ token, allCourses, subtitle }))
   .then(allCourseWithVideosLessons => putCoursesIntoFile(allCourseWithVideosLessons, downDir))
   .catch(errorHandler);
 /*const downloadSelectively = async (email, password, url, downDir) => {
