@@ -1,4 +1,4 @@
-# Scrape videos (course) from coursehunter.net
+# Scrape videos (course) from coursehunter.net for pro members
 [![npm](https://badgen.net/npm/v/ch-scrape)](https://www.npmjs.com/package/ch-scrape)
 
 ## Install
