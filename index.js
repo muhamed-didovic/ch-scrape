@@ -75,7 +75,7 @@ const getCourse = async ({ token, url }) => {
   return { token, allCourses }
 };
 const getPages = async ({ token, categories }) => {
-  let cc = 1;
+  let cc = 0;
   logger.info(`Number of urls to download from: ${categories.length}`)
   const spin = logger.start('Capturing pages')
   let allPages = await fetcher
@@ -299,33 +299,34 @@ Options
     Examples
       $ ch
       $ ch --all
-      $ ch https://coursehunter.net/course/intermediate-typescript/ -t course 
-      $ ch -e user@gmail.com -p password -d path-to-directory -t source`, {
-  flags: {
-    help     : { alias: 'h' },
-    version  : { alias: 'v' },
-    all      : { type: 'boolean', alias: 'a' },
-    email    : {
-      type : 'string',
-      alias: 'e'
-    },
-    password : {
-      type : 'string',
-      alias: 'p'
-    },
-    directory: { type: 'string', alias: 'd' },//, default: process.cwd()
-    subtitle: {
-      type : 'boolean',
-      alias: 's',
-      default: false
-    },
-    type: {
-      type : 'string',
-      alias: 't'
-    },
+      $ ch https://coursehunter.net/course/intermediate-typescript/-t course 
+      $ ch -e user@gmail.com -p password -d path-to-directory -t source`,
+  {
+    flags: {
+      help     : { alias: 'h' },
+      version  : { alias: 'v' },
+      all      : { type: 'boolean', alias: 'a' },
+      email    : {
+        type : 'string',
+        alias: 'e'
+      },
+      password : {
+        type : 'string',
+        alias: 'p'
+      },
+      directory: { type: 'string', alias: 'd' },//, default: process.cwd()
+      subtitle : {
+        type   : 'boolean',
+        alias  : 's',
+        default: false
+      },
+      type     : {
+        type : 'string',
+        alias: 't'
+      },
 
-  }
-})
+    }
+  })
 
 async function promptForDownloadAll(flags, input) {
   const email = flags.email || await askOrExit({
@@ -357,7 +358,7 @@ const prompt = async () => {
     input.push(await askOrExit({
       type    : 'text',
       message : 'Enter url for download.',
-      initial : 'https://coursehunter.net/source/frontendmasters',
+      initial : 'https://coursehunter.net/source/developedbyed-com',
       validate: value => value.includes('coursehunter.net') ? true : 'Url is not valid'
     }))
   }
@@ -396,11 +397,11 @@ const prompt = async () => {
     })
 
   const subtitle = flags.subtitle || await askOrExit({
-    type: 'toggle',
-    name: 'value',
+    type    : 'toggle',
+    name    : 'value',
     message : `Download subtitle?`,
-    initial: flags.zip,
-    active: 'yes',
+    initial : flags.zip,
+    active  : 'yes',
     inactive: 'no'
   })
 
