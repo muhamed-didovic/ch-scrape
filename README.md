@@ -15,7 +15,7 @@ npx ch-scrape
 ## CLI
 ```sh
 Usage
-    $ ch <?CourseUrl|SourceUrl|CategoryUrl>
+    $ ch-scrape <?CourseUrl|SourceUrl|CategoryUrl>
 
 Options
 --all, -a         Get all courses.
@@ -29,10 +29,10 @@ Options
 --concurrency, -cc
   
 Examples
-  $ ch
-  $ ch --all
-  $ ch https://coursehunter.net/course/intermediate-typescript -t course 
-  $ ch --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]
+  $ ch-scrape
+  $ ch-scrape --all
+  $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course 
+  $ ch-scrape --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]
 ```
 
 ## License
