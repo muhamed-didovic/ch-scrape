@@ -62,7 +62,7 @@ async function promptForDownloadAll(flags, input) {
     validate: value => value.length < 5 ? `Sorry, password must be longer` : true
   })
   const downDir = await askSaveDirOrExit()
-  return { input, email, password, downDir, type: 'all', file, filePath };
+  return { input, email, password, downDir, type: 'all' };
 }
 
 const prompt = async () => {
@@ -90,10 +90,22 @@ const prompt = async () => {
       validate: value => value.includes('coursehunter.net') ? true : 'Url is not valid'
     }))
   } else {
+
+    let searchCoursesFile = false;
+    if (fs.existsSync(path.resolve(process.cwd(), 'json/search-courses.json'))) {
+      searchCoursesFile = true;
+    }
+
+    const foundSearchCoursesFile = await askOrExit({
+      type   : searchCoursesFile ? 'confirm' : null,
+      message: 'Do you want to search for a courses from a local file (which is faster)' ,
+      initial: true
+    })
+
     input.push(await askOrExit({
       type    : 'autocomplete',
       message : 'Search for a course',
-      choices   : await searchForCourses(),
+      choices   : await searchForCourses(foundSearchCoursesFile),
       suggest   : (input, choices) => {
         if (!input) return choices;
         const fuse = new Fuse(choices, {
