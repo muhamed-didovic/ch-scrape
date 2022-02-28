@@ -12,6 +12,7 @@ async function askOrExit(question) {
   const res = await prompts({ name: 'value', ...question }, { onCancel: () => process.exit(1) })
   return res.value
 }
+
 const askSaveDirOrExit = () => askOrExit({
   type   : 'text',
   message: 'Enter the directory to save.',
@@ -19,35 +20,38 @@ const askSaveDirOrExit = () => askOrExit({
 });
 
 const cli = meow(`
-    Usage
+  Usage
     $ ch <?CourseUrl|SourceUrl|CategoryUrl>
 
-Options
+  Options
     --all, -a         Get all courses.
     --email, -e       Your email. 
     --password, -p    Your password.
     --directory, -d   Directory to save.
     --type, -t        source|course Type of download. 
     --subtitle, -s    Download subtitles if available.
+    --zip, -z         Download archive if available.
+    --code, -c        Download code if available.
+    --concurrency, -cc
       
     Examples
       $ ch
       $ ch --all
       $ ch https://coursehunter.net/course/intermediate-typescript -t course 
-      $ ch --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-c concurrency-number]`,
+      $ ch --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]`,
   {
     flags: {
-      help     : { alias: 'h' },
-      version  : { alias: 'v' },
-      all      : { type: 'boolean', alias: 'a' },
-      email    : { type : 'string', alias: 'e' },
-      password : { type : 'string', alias: 'p' },
-      directory: { type: 'string', alias: 'd' },//, default: process.cwd()
-      type     : { type : 'string', alias: 't' },
-      subtitle : { type   : 'boolean', alias  : 's', default: false },
-      code     : { type   : 'boolean', alias  : 'c', default: false },
-      zip      : { type   : 'boolean', alias  : 'z', default: false },
-      concurrency: { type: 'number', alias: 'c', default: 10}
+      help       : { alias: 'h' },
+      version    : { alias: 'v' },
+      all        : { type: 'boolean', alias: 'a' },
+      email      : { type: 'string', alias: 'e' },
+      password   : { type: 'string', alias: 'p' },
+      directory  : { type: 'string', alias: 'd' },//, default: process.cwd()
+      type       : { type: 'string', alias: 't' },
+      subtitle   : { type: 'boolean', alias: 's', default: false },
+      code       : { type: 'boolean', alias: 'c', default: false },
+      zip        : { type: 'boolean', alias: 'z', default: false },
+      concurrency: { type: 'number', alias: 'cc', default: 10 }
     }
   })
 
@@ -83,26 +87,26 @@ async function commonFlags(flags) {
     inactive: 'no'
   })
   const code = flags.code || await askOrExit({
-    type: 'toggle',
-    name: 'value',
-    message: 'Download code if it exists?',
-    initial: flags.code,
-    active: 'yes',
+    type    : 'toggle',
+    name    : 'value',
+    message : 'Download code if it exists?',
+    initial : flags.code,
+    active  : 'yes',
     inactive: 'no'
   })
 
   const zip = flags.zip || await askOrExit({
-    type: 'toggle',
-    name: 'value',
-    message: 'Download archive of the course if it exists?',
-    initial: flags.zip,
-    active: 'yes',
+    type    : 'toggle',
+    name    : 'value',
+    message : 'Download archive of the course if it exists?',
+    initial : flags.zip,
+    active  : 'yes',
     inactive: 'no'
   })
   const concurrency = flags.concurrency || await askOrExit({
-    type    : 'number',
-    message : `Enter concurrency`,
-    initial : 10
+    type   : 'number',
+    message: `Enter concurrency`,
+    initial: 10
   })
   return { email, password, downDir, subtitle, code, zip, concurrency };
 }
@@ -118,7 +122,7 @@ const prompt = async () => {
     return await promptForDownloadAll(flags, input);
   }
 
-  const searchOrDownload =  await askOrExit({
+  const searchOrDownload = await askOrExit({
     type   : (!flags.file && input.length === 0) ? 'confirm' : null,
     message: 'Choose "Y" if you want to search for a course otherwise choose "N" if you have a link for download',
     initial: true
@@ -140,15 +144,15 @@ const prompt = async () => {
 
     const foundSearchCoursesFile = await askOrExit({
       type   : (searchCoursesFile && input.length === 0 && !flags.file) ? 'confirm' : null,
-      message: 'Do you want to search for a courses from a local file (which is faster)' ,
+      message: 'Do you want to search for a courses from a local file (which is faster)',
       initial: true
     })
 
     input.push(await askOrExit({
-      type    : (input.length === 0 && !flags.file) ? 'autocomplete' : null,
-      message : 'Search for a course',
-      choices   : (input.length === 0 && !flags.file) ? await searchForCourses(foundSearchCoursesFile) : [],
-      suggest   : (input, choices) => {
+      type   : (input.length === 0 && !flags.file) ? 'autocomplete' : null,
+      message: 'Search for a course',
+      choices: (input.length === 0 && !flags.file) ? await searchForCourses(foundSearchCoursesFile) : [],
+      suggest: (input, choices) => {
         if (!input) return choices;
         const fuse = new Fuse(choices, {
           keys: ['title', 'second_title', 'value']
