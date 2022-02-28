@@ -33,8 +33,8 @@ Options
     Examples
       $ ch
       $ ch --all
-      $ ch https://coursehunter.net/course/intermediate-typescript/-t course 
-      $ ch -e user@gmail.com -p password -d path-to-directory -t source`,
+      $ ch https://coursehunter.net/course/intermediate-typescript -t course 
+      $ ch --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-c concurrency-number]`,
   {
     flags: {
       help     : { alias: 'h' },
@@ -99,7 +99,12 @@ async function commonFlags(flags) {
     active: 'yes',
     inactive: 'no'
   })
-  return { email, password, downDir, subtitle, code, zip };
+  const concurrency = flags.concurrency || await askOrExit({
+    type    : 'number',
+    message : `Enter concurrency`,
+    initial : 10
+  })
+  return { email, password, downDir, subtitle, code, zip, concurrency };
 }
 
 const prompt = async () => {
@@ -153,7 +158,7 @@ const prompt = async () => {
     }))
   }
 
-  const { email, password, downDir, subtitle, code, zip } = await commonFlags(flags);
+  const options = await commonFlags(flags);
 
   const type = ['source', 'course'].includes(flags.type)
     ? flags.type
@@ -173,7 +178,7 @@ const prompt = async () => {
       initial: 0
     })
 
-  return { url: input[0], email, password, downDir, type, subtitle, code, zip };
+  return { url: input[0], type, ...options };
 };
 
 const run = async (options) => {//{ url, email, password, downDir, type, subtitle, code, zip }
