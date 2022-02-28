@@ -145,9 +145,9 @@ const prompt = async () => {
     })
 
     input.push(await askOrExit({
-      type    : 'autocomplete',
+      type    : (input.length === 0 && !flags.file) ? 'autocomplete' : null,
       message : 'Search for a course',
-      choices   : await searchForCourses(foundSearchCoursesFile),
+      choices   : (input.length === 0 && !flags.file) ? await searchForCourses(foundSearchCoursesFile) : [],
       suggest   : (input, choices) => {
         if (!input) return choices;
         const fuse = new Fuse(choices, {
