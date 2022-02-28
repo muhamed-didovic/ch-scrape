@@ -118,8 +118,8 @@ const prompt = async () => {
     return await promptForDownloadAll(flags, input);
   }
 
-  const searchOrDownload = flags.file || await askOrExit({
-    type   : 'confirm',
+  const searchOrDownload =  await askOrExit({
+    type   : (!flags.file && input.length === 0) ? 'confirm' : null,
     message: 'Choose "Y" if you want to search for a course otherwise choose "N" if you have a link for download',
     initial: true
   })
@@ -139,7 +139,7 @@ const prompt = async () => {
     }
 
     const foundSearchCoursesFile = await askOrExit({
-      type   : searchCoursesFile ? 'confirm' : null,
+      type   : (searchCoursesFile && input.length === 0 && !flags.file) ? 'confirm' : null,
       message: 'Do you want to search for a courses from a local file (which is faster)' ,
       initial: true
     })
