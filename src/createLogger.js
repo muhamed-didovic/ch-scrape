@@ -7,7 +7,7 @@ const ora = require('ora')
  * @returns {import('ora').Ora}
  */
 module.exports = (opts = {}) => new Proxy({ isLogger: true }, {
-  get (target, prop) {
+  get(target, prop) {
     if (hasOwn(target, prop)) return Reflect.get(target, prop)
     if (opts.disabled) return returnNullObj
     const o = ora(opts)
@@ -24,10 +24,10 @@ module.exports = (opts = {}) => new Proxy({ isLogger: true }, {
   }
 })
 
-function hasOwn (o, prop) {
+function hasOwn(o, prop) {
   return Object.prototype.hasOwnProperty.call(o, prop)
 }
 
-function returnNullObj () {
+function returnNullObj() {
   return {}
 }

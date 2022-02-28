@@ -34,11 +34,11 @@ const cli = meow(`
     --code, -c        Download code if available.
     --concurrency, -cc
       
-    Examples
-      $ ch-scrape
-      $ ch-scrape --all
-      $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course 
-      $ ch-scrape --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]`,
+  Examples
+    $ ch-scrape
+    $ ch-scrape --all
+    $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course 
+    $ ch-scrape --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]`,
   {
     flags: {
       help       : { alias: 'h' },
