@@ -43,14 +43,21 @@ Options
       email    : { type : 'string', alias: 'e' },
       password : { type : 'string', alias: 'p' },
       directory: { type: 'string', alias: 'd' },//, default: process.cwd()
-      subtitle : { type   : 'boolean', alias  : 's', default: false },
       type     : { type : 'string', alias: 't' },
+      subtitle : { type   : 'boolean', alias  : 's', default: false },
+      code     : { type   : 'boolean', alias  : 'c', default: false },
+      zip      : { type   : 'boolean', alias  : 'z', default: false },
       concurrency: { type: 'number', alias: 'c', default: 10}
-
     }
   })
 
 async function promptForDownloadAll(flags, input) {
+  /*const downDir = await askSaveDirOrExit()*/
+  const otherFlags = await commonFlags(flags);
+  return { input, type: 'all', ...otherFlags };
+}
+
+async function commonFlags(flags) {
   const email = flags.email || await askOrExit({
     type    : 'text',
     message : 'Enter email',
@@ -61,8 +68,38 @@ async function promptForDownloadAll(flags, input) {
     message : 'Enter password',
     validate: value => value.length < 5 ? `Sorry, password must be longer` : true
   })
-  const downDir = await askSaveDirOrExit()
-  return { input, email, password, downDir, type: 'all' };
+  const downDir = flags.directory || path.resolve(await askOrExit({
+    type    : 'text',
+    message : `Enter a directory to save a file (eg: ${path.resolve(process.cwd())})`,
+    initial : path.resolve(process.cwd(), 'videos/'),
+    validate: isValidPath
+  }))
+  const subtitle = flags.subtitle || await askOrExit({
+    type    : 'toggle',
+    name    : 'value',
+    message : `Download subtitle?`,
+    initial : flags.zip,
+    active  : 'yes',
+    inactive: 'no'
+  })
+  const code = flags.code || await askOrExit({
+    type: 'toggle',
+    name: 'value',
+    message: 'Download code if it exists?',
+    initial: flags.code,
+    active: 'yes',
+    inactive: 'no'
+  })
+
+  const zip = flags.zip || await askOrExit({
+    type: 'toggle',
+    name: 'value',
+    message: 'Download archive of the course if it exists?',
+    initial: flags.zip,
+    active: 'yes',
+    inactive: 'no'
+  })
+  return { email, password, downDir, subtitle, code, zip };
 }
 
 const prompt = async () => {
@@ -116,22 +153,8 @@ const prompt = async () => {
     }))
   }
 
-  const email = flags.email || await askOrExit({
-    type    : 'text',
-    message : 'Enter email',
-    validate: value => value.length < 5 ? `Sorry, enter correct email` : true
-  })
-  const password = flags.password || await askOrExit({
-    type    : 'text',
-    message : 'Enter password',
-    validate: value => value.length < 5 ? `Sorry, password must be longer` : true
-  })
-  const downDir = flags.directory || path.resolve(await askOrExit({
-    type    : 'text',
-    message : `Enter a directory to save (eg: ${path.resolve(process.cwd())})`,
-    initial : path.resolve(process.cwd(), 'videos/'),
-    validate: isValidPath
-  }))
+  const { email, password, downDir, subtitle, code, zip } = await commonFlags(flags);
+
   const type = ['source', 'course'].includes(flags.type)
     ? flags.type
     : await askOrExit({
@@ -150,22 +173,14 @@ const prompt = async () => {
       initial: 0
     })
 
-  const subtitle = flags.subtitle || await askOrExit({
-    type    : 'toggle',
-    name    : 'value',
-    message : `Download subtitle?`,
-    initial : flags.zip,
-    active  : 'yes',
-    inactive: 'no'
-  })
-
-  return { url: input[0], email, password, downDir, type, subtitle };
+  return { url: input[0], email, password, downDir, type, subtitle, code, zip };
 };
-const run = async ({ url, email, password, downDir, type, subtitle }) => {
-  if (type === 'course') {
-    return downloadSelectively(email, password, url, downDir, subtitle);
+
+const run = async (options) => {//{ url, email, password, downDir, type, subtitle, code, zip }
+  if (options.type === 'course') {
+    return downloadSelectively(options);
   }
-  return downloadAll(email, password, type, url, downDir, subtitle);
+  return downloadAll(options);
 };
 /*(async () => {
   const { url, email, password, downDir, type } = await prompt();
