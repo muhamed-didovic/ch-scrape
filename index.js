@@ -6,7 +6,7 @@ const path = require("path")
 const isValidPath = require("is-valid-path")
 const Fuse = require('fuse.js')
 
-const { downloadSelectively, downloadAll, searchForCourses } = require("./lib/download")
+const { scrapeSelectively, scrapeAll, searchForCourses } = require("./lib/scrape")
 
 async function askOrExit(question) {
   const res = await prompts({ name: 'value', ...question }, { onCancel: () => process.exit(1) })
@@ -82,7 +82,7 @@ async function commonFlags(flags) {
     type    : 'toggle',
     name    : 'value',
     message : `Download subtitle?`,
-    initial : flags.zip,
+    initial : flags.subtitle,
     active  : 'yes',
     inactive: 'no'
   })
@@ -187,9 +187,10 @@ const prompt = async () => {
 
 const run = async (options) => {//{ url, email, password, downDir, type, subtitle, code, zip }
   if (options.type === 'course') {
-    return downloadSelectively(options);
+    return scrapeSelectively(options);
   }
-  return downloadAll(options);
+  // console.log('options', options);
+  return scrapeAll(options);
 };
 /*(async () => {
   const { url, email, password, downDir, type } = await prompt();
