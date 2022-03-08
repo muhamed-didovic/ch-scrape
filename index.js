@@ -28,10 +28,12 @@ const cli = meow(`
     --email, -e       Your email. 
     --password, -p    Your password.
     --directory, -d   Directory to save.
-    --type, -t        source|course Type of download. 
-    --subtitle, -s    Download subtitles if available.
-    --zip, -z         Download archive if available.
-    --code, -c        Download code if available.
+    --type, -t        source|course Type of download.
+    --videos, -v      Include videos if available. 
+    --subtitle, -s    Include subtitles if available.
+    --zip, -z         Include archive if available.
+    --code, -c        Include code if available.
+    --lang, -l        Include courses of certain language ('en', 'ru' or 'both')
     --concurrency, -cc
       
   Examples
@@ -48,9 +50,11 @@ const cli = meow(`
       password   : { type: 'string', alias: 'p' },
       directory  : { type: 'string', alias: 'd' },//, default: process.cwd()
       type       : { type: 'string', alias: 't' },
+      videos     : { type: 'boolean', alias: 'v', default: true },
       subtitle   : { type: 'boolean', alias: 's', default: false },
       code       : { type: 'boolean', alias: 'c', default: false },
       zip        : { type: 'boolean', alias: 'z', default: false },
+      lang       : { type: 'string', alias: 'l' },
       concurrency: { type: 'number', alias: 'cc', default: 10 }
     }
   })
@@ -81,7 +85,7 @@ async function commonFlags(flags) {
   const subtitle = flags.subtitle || await askOrExit({
     type    : 'toggle',
     name    : 'value',
-    message : `Download subtitle?`,
+    message : `Include subtitle if it exists?`,
     initial : flags.subtitle,
     active  : 'yes',
     inactive: 'no'
@@ -89,7 +93,7 @@ async function commonFlags(flags) {
   const code = flags.code || await askOrExit({
     type    : 'toggle',
     name    : 'value',
-    message : 'Download code if it exists?',
+    message : 'Include code if it exists?',
     initial : flags.code,
     active  : 'yes',
     inactive: 'no'
@@ -98,7 +102,7 @@ async function commonFlags(flags) {
   const zip = flags.zip || await askOrExit({
     type    : 'toggle',
     name    : 'value',
-    message : 'Download archive of the course if it exists?',
+    message : 'Include archive of the course if it exists?',
     initial : flags.zip,
     active  : 'yes',
     inactive: 'no'
@@ -108,7 +112,36 @@ async function commonFlags(flags) {
     message: `Enter concurrency`,
     initial: 10
   })
-  return { email, password, downDir, subtitle, code, zip, concurrency };
+  const videos = flags.code || await askOrExit({
+    type    : 'toggle',
+    message : 'Include videos if it exist?',
+    initial : flags.videos,
+    active  : 'yes',
+    inactive: 'no'
+  })
+  const lang = ['English', 'Русский', 'all'].includes(flags.lang)
+    ? flags.lang
+    : await askOrExit({
+      type   : 'select',
+      message: 'Which language of course should be downloaded.',
+      choices: [
+        {
+          title: 'English',
+          value: 'English'
+        },
+        {
+          title: 'Russian',
+          value: 'Русский'
+        },
+        {
+          title: 'Both, Russian and English',
+          value: 'all'
+        }
+      ],
+      initial: 0
+    })
+
+  return { email, password, downDir, subtitle, code, zip, concurrency, lang, videos };
 }
 
 const prompt = async () => {

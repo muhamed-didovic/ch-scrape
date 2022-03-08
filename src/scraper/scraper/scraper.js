@@ -11,6 +11,7 @@ const parseFormat = require('./parseFormat');
 const rselector = /^([^@]*)(?:@\s*([\w-_:]+))?$/;
 const rfilters = /\s*\|(?!=)\s*/;
 const globalFilters = require('../utils/filters');
+const { trim } = require("lodash");
 
 function setGlobalFilters(filters) {
   Object.assign(globalFilters, filters);
@@ -185,7 +186,7 @@ function getValue(element, name, locationUrl) {
     case 'html':
       return getHtml([element]);
     case 'text':
-      return getText([element]);
+      return trim(getText([element])).replace(/^\s+|\s+$/g, '');
     case 'link':
       return getLink(locationUrl, createNode([element], locationUrl));
     default:
