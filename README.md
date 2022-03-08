@@ -1,6 +1,8 @@
 # Scrape videos (courses) from coursehunter.net for pro members into file
 
-[![npm](https://badgen.net/npm/v/ch-scrape)](https://www.npmjs.com/package/ch-scrape)
+[![npm](https://flat.badgen.net/npm/v/ch-scrape)](https://www.npmjs.com/package/ch-scrape)
+[![license](https://flat.badgen.net/github/license/muhamed-didovic/ch-scrape)](https://github.com/muhamed-didovic/ch-scrape/blob/master/LICENSE)
+
 
 ## Install
 ```sh
