@@ -6,11 +6,22 @@ const FormData = require('form-data');
 // - basic cookie session support (careful: it's not supporting domain filtering for now so it will send your cookie to any domain)
 // - form data
 
-
 axiosRetry(axios, {
-  retries: 3,
-  shouldResetTimeout: true,
-  retryCondition: (_error) => true // retry no matter what
+  retries: 50,
+  //retryDelay: axiosRetry.exponentialDelay,
+  // shouldResetTimeout: true,
+  //retryCondition: (_error) => true // retry no matter what
+
+  retryDelay: (retryCount) => {
+    //console.log(`retry attempt: ${retryCount}`);
+    return retryCount * 2000; // time interval between retries
+  },
+  retryCondition: (error) => {
+    // console.log('EEEEEEE', error);
+    // if retry condition is not specified, by default idempotent requests are retried
+    // return error.response.status === 502;
+    return true
+  },
 });
 
 // rax.attach();
