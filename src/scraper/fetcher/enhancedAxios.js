@@ -12,9 +12,9 @@ axiosRetry(axios, {
   // shouldResetTimeout: true,
   //retryCondition: (_error) => true // retry no matter what
 
-  retryDelay: (retryCount) => {
+  retryDelay    : (retryCount) => {
     //console.log(`retry attempt: ${retryCount}`);
-    return retryCount * 2000; // time interval between retries
+    return retryCount*2000; // time interval between retries
   },
   retryCondition: (error) => {
     // console.log('EEEEEEE', error);
