@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "index.js",
   "bin": {
@@ -15,7 +15,9 @@
   ],
   "keywords": [
     "download",
+    "downloader",
     "nodejs",
+    "coursehunter-downloader",
     "coursehunter"
   ],
   "author": "Muhamed Didovic (github.com/muhamed-didovic)",
@@ -29,7 +31,7 @@
     "app-module-path": "^2.2.0",
     "async-http-request": "^1.0.4",
     "async-request": "^1.2.0",
-    "axios": "^0.26.0",
+    "axios": "^0.26.1",
     "axios-retry": "^3.2.4",
     "bluebird": "^3.7.2",
     "boolbase": "^1.0.0",
@@ -45,7 +47,7 @@
     "form-data": "^2.5.1",
     "fs-extra": "^10.0.1",
     "fuse.js": "^6.5.3",
-    "inherits": "^2.0.1",
+    "inherits": "^2.0.4",
     "is-valid-path": "^0.1.1",
     "loadash": "^1.0.0",
     "lodash": "^4.17.21",

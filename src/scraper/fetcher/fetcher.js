@@ -2,12 +2,7 @@ const axios = require('./enhancedAxios');
 const { parseHtml } = require('../scraper/scraper');
 const enhanceIterator = require('./enhanceIterator');
 const addScraperShortcuts = require('../utils/addScraperShortcuts');
-/*const axiosRetry = require('axios-retry');
-axiosRetry(axios, {
-  retries: 3,
-  shouldResetTimeout: true,
-  retryCondition: (_error) => true // retry no matter what
-});*/
+
 function createFetcher(config = {}) {
   let fetcherInstance;
 
