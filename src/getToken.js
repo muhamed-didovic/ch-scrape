@@ -12,12 +12,10 @@ const getToken = async (e_mail, password) => {
       data   : JSON.stringify({ e_mail: e_mail, password: password }),
     })
 
-    if (res.data.token) {
-      return res.headers['set-cookie'][0] + '; accessToken=' + res.data.token;
-    } else {
-      throw new Error('not token from response ')
+    if (!res.data.token) {
+      throw new Error('not token from response')
     }
-
+    return res.headers['set-cookie'][0] + '; accessToken=' + res.data.token;
   } catch (error) {
     throw new Error(error.response.data);
   }

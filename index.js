@@ -5,6 +5,7 @@ const meow = require("meow")
 const path = require("path")
 const isValidPath = require("is-valid-path")
 const Fuse = require('fuse.js')
+const isEmail = require('util-is-email').default
 
 const { scrapeSelectively, scrapeAll, searchForCourses } = require("./lib/scrape")
 
@@ -25,21 +26,21 @@ const cli = meow(`
 
   Options
     --all, -a         Get all courses.
-    --email, -e       Your email. 
+    --email, -e       Your email.
     --password, -p    Your password.
     --directory, -d   Directory to save.
     --type, -t        source|course Type of download.
-    --videos, -v      Include videos if available. 
+    --videos, -v      Include videos if available.
     --subtitle, -s    Include subtitles if available.
     --zip, -z         Include archive if available.
     --code, -c        Include code if available.
-    --lang, -l        Include courses of certain language ('en', 'ru' or 'both')
+    --lang, -l        Include courses of certain language, available options: 'English', 'Русский' and 'all'
     --concurrency, -cc
-      
+
   Examples
     $ ch-scrape
     $ ch-scrape --all
-    $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course 
+    $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course
     $ ch-scrape --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]`,
   {
     flags: {
@@ -51,9 +52,9 @@ const cli = meow(`
       directory  : { type: 'string', alias: 'd' },//, default: process.cwd()
       type       : { type: 'string', alias: 't' },
       videos     : { type: 'boolean', alias: 'v', default: true },
-      subtitle   : { type: 'boolean', alias: 's', default: false },
-      code       : { type: 'boolean', alias: 'c', default: false },
-      zip        : { type: 'boolean', alias: 'z', default: false },
+      subtitle   : { type: 'boolean', alias: 's' },
+      code       : { type: 'boolean', alias: 'c' },
+      zip        : { type: 'boolean', alias: 'z' },
       lang       : { type: 'string', alias: 'l' },
       concurrency: { type: 'number', alias: 'cc', default: 10 }
     }
@@ -69,10 +70,10 @@ async function commonFlags(flags) {
   const email = flags.email || await askOrExit({
     type    : 'text',
     message : 'Enter email',
-    validate: value => value.length < 5 ? `Sorry, enter correct email` : true
+    validate: isEmail
   })
   const password = flags.password || await askOrExit({
-    type    : 'text',
+    type    : 'password',
     message : 'Enter password',
     validate: value => value.length < 5 ? `Sorry, password must be longer` : true
   })
