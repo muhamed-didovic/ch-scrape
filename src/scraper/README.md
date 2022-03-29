@@ -37,7 +37,7 @@ The library is articulated around two main components:
 - the `fetcher` let you grab contents from any url,
 - the `scraper` let you extract data from webpages.
 
-There is also some additional tools like an enhanced axios client. 
+There is also some additional tools like an enhanced axios client.
 
 ## Quick Example
 
@@ -54,9 +54,8 @@ const quote = page.scrape('.quote', {
 });
 ```
 ```json
-<!-- quote -->
-{ 
-  "author": "Albert Einstein", 
+{
+  "author": "Albert Einstein",
   "text": "“The world as we have created it is a process of our thinking.“"
 }
 ```

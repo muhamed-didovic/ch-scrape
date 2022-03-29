@@ -113,7 +113,7 @@ async function commonFlags(flags) {
     message: `Enter concurrency`,
     initial: 10
   })
-  const videos = flags.code || await askOrExit({
+  const videos = flags.videos || await askOrExit({
     type    : 'toggle',
     message : 'Include videos if it exist?',
     initial : flags.videos,
