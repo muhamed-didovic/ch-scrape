@@ -1,5 +1,85 @@
 [
   {
+    "second_title": "Создавайте модные лендинги с помощью React(-three-fiber) и Threejs",
+    "title": "Build fancy landing pages with React(-three-fiber) and Threejs",
+    "value": "https://coursehunter.net/course/sozdavayte-modnye-lendingi-s-pomoshchyu-react-three-fiber-i-threejs"
+  },
+  {
+    "second_title": "Введение в Unity для веб-разработчиков",
+    "title": "Introduction to Unity for Web Developers",
+    "value": "https://coursehunter.net/course/vvedenie-v-unity-dlya-veb-razrabotchikov"
+  },
+  {
+    "second_title": "Веб-компоненты",
+    "title": "Web Components",
+    "value": "https://coursehunter.net/course/veb-komponenty"
+  },
+  {
+    "second_title": "Практический TLS",
+    "title": "Practical TLS",
+    "value": "https://coursehunter.net/course/prakticheskiy-tls"
+  },
+  {
+    "second_title": "Полное погружение в No-code",
+    "title": "Практический онлайн-курс Полное погружение в No-code",
+    "value": "https://coursehunter.net/course/polnoe-pogruzhenie-v-no-code"
+  },
+  {
+    "second_title": "Алгоритмы: roadmap для работы и собеседований",
+    "title": "Алгоритмы: roadmap для работы и собеседований",
+    "value": "https://coursehunter.net/course/algoritmy-roadmap-dlya-raboty-i-sobesedovaniy"
+  },
+  {
+    "second_title": "Blazor - Полное Руководство (WASM и сервер .NET Core 5)",
+    "title": "Blazor - The Complete Guide (WASM & Server .NET Core 5)",
+    "value": "https://coursehunter.net/course/blazor-polnoe-rukovodstvo-wasm-i-server-net-core-5"
+  },
+  {
+    "second_title": "Алгоритмы в Java: Решение Проблем в Реальном Времени и Методы Проектирования",
+    "title": "Algorithms in Java: Live problem solving & Design Techniques",
+    "value": "https://coursehunter.net/course/algoritmy-v-java-reshenie-problem-v-realnom-vremeni-i-metody-proektirovaniya"
+  },
+  {
+    "second_title": "React Native - Создайте клон Instagram с Firebase",
+    "title": "React Native bootcamp - Build an Instagram Clone w/Firebase",
+    "value": "https://coursehunter.net/course/uchebnyy-kurs-react-native-sozdayte-klon-instagram-s-firebase"
+  },
+  {
+    "second_title": "Изучите PHP, Laravel, CSS и Sass",
+    "title": "Ultimate PHP, Laravel, CSS & Sass! Learn PHP, Laravel & Sass",
+    "value": "https://coursehunter.net/course/izuchayte-php-laravel-css-i-sass"
+  },
+  {
+    "second_title": "iOS 13 и Swift 5: Вход, Регистрация и Онбординг с помощью Firebase",
+    "title": "iOS 13 & Swift 5: Login, Sign Up & Onboarding with Firebase",
+    "value": "https://coursehunter.net/course/ios-13-i-swift-5-vhod-registraciya-i-podklyuchenie-s-pomoshchyu-firebase"
+  },
+  {
+    "second_title": "Освойте Mysql, Javascript, Laravel 5.8 и Проект Электронной Коммерции",
+    "title": "Master Mysql, Javascript, Laravel 5.8 and e-commerce project",
+    "value": "https://coursehunter.net/course/osvoyte-mysql-javascript-laravel-5-8-i-proekt-elektronnoy-kommercii"
+  },
+  {
+    "second_title": "Безопасность смарт-контрактов Ethereum",
+    "title": "Ethereum Smart Contract Security",
+    "value": "https://coursehunter.net/course/bezopasnost-smart-kontraktov-ethereum"
+  },
+  {
+    "second_title": "Программирование на C++ для блокчейн разработчиков",
+    "title": "C++ Programming for Blockchain Developers",
+    "value": "https://coursehunter.net/course/programmirovanie-na-c-dlya-blokcheyn-razrabotchikov"
+  },
+  {
+    "second_title": "Bitcoin уязвимости",
+    "title": "Bitcoin Vulnerabilities",
+    "value": "https://coursehunter.net/course/bitcoin-uyazvimosti"
+  },
+  {
+    "second_title": "Изучите технический анализ",
+    "title": "Master Technical Analysis",
+    "value": "https://coursehunter.net/course/izuchite-tehnicheskiy-analiz"
+  },
+  {
     "second_title": "Блокчейн для предприятий. Baseline Protocol и Unibright",
     "title": "Blockchain for Enterprise. Baseline Protocol and Unibright",
     "value": "https://coursehunter.net/course/blokcheyn-dlya-predpriyatiy-baseline-protocol-i-unibright"
@@ -19415,7 +19495,7 @@
     "value": "https://coursehunter.net/course/lyndacom-creating-expandable-panels-with-jquery"
   },
   {
-    "second_title": "\\\"Разработчик игр\\\" - Создаем 60 игр",
+    "second_title": "Разработчик игр - Создаем 60 игр",
     "title": "The Complete Game Developer course - Build 60 Games ",
     "value": "https://coursehunter.net/course/udemy-the-complete-game-dev-course"
   },
@@ -19490,14 +19570,14 @@
     "value": "https://coursehunter.net/course/udemy-php-for-beginners-become-a-php-master"
   },
   {
+    "second_title": "Полный курс Javа",
+    "title": "The Complete Java Developer",
+    "value": "https://coursehunter.net/course/java-developer"
+  },
+  {
     "second_title": "Адаптивная типографика",
     "title": "Responsive Typography",
     "value": "https://coursehunter.net/course/frontendmasters-responsive-typography"
-  },
-  {
-    "second_title": "Тестирование Java для разработчиков",
-    "title": "Java Testing for Developers",
-    "value": "https://coursehunter.net/course/oreilly-java-testing-for-developers"
   },
   {
     "second_title": "Тестирование Java для разработчиков",
