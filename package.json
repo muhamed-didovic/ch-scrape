@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "index.js",
   "bin": {

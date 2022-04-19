@@ -1,11 +1,14 @@
 const fs = require('fs-extra')
-const Promise = require('bluebird')
 const prompts = require("prompts")
 const meow = require("meow")
 const path = require("path")
 const isValidPath = require("is-valid-path")
 const Fuse = require('fuse.js')
 const isEmail = require('util-is-email').default
+
+const Bluebird = require('bluebird');
+Bluebird.config({ longStackTraces: true });
+global.Promise = Bluebird
 
 const { scrapeSelectively, scrapeAll, searchForCourses } = require("./lib/scrape")
 
