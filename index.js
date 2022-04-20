@@ -219,7 +219,7 @@ const prompt = async () => {
       initial: 0
     })
 
-  return { url: input[0], type, ...options };
+  return { url: input[0].trim(), type, ...options };
 };
 
 const run = async (options) => {//{ url, email, password, downDir, type, subtitle, code, zip }
