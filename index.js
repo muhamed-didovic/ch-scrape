@@ -6,8 +6,8 @@ const isValidPath = require("is-valid-path")
 const Fuse = require('fuse.js')
 const isEmail = require('util-is-email').default
 
-const Bluebird = require('bluebird');
-Bluebird.config({ longStackTraces: true });
+const Bluebird = require('bluebird')
+Bluebird.config({ longStackTraces: true })
 global.Promise = Bluebird
 
 const { scrapeSelectively, scrapeAll, searchForCourses } = require("./lib/scrape")
@@ -205,14 +205,14 @@ const prompt = async () => {
     ? flags.type
     : await askOrExit({
       type   : 'select',
-      message: 'What do you want to download: course or source.',
+      message: 'What do you want to download: course(book) or source.',
       choices: [
         {
           title: 'source',
           value: 'source'
         },
         {
-          title: 'course',
+          title: 'course or book',
           value: 'course'
         }
       ],
