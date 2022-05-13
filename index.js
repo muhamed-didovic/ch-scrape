@@ -208,12 +208,12 @@ const prompt = async () => {
       message: 'What do you want to download: course(book) or source.',
       choices: [
         {
-          title: 'source',
-          value: 'source'
-        },
-        {
           title: 'course or book',
           value: 'course'
+        },
+        {
+          title: 'source',
+          value: 'source'
         }
       ],
       initial: 0
