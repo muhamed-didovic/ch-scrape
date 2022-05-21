@@ -11,7 +11,7 @@
 	  they need to return a boolean
 */
 
-var getNCheck = require("nth-check");
+var getNCheck = require("nth-check").default;
 var BaseFuncs = require("boolbase");
 var attributes = require("./attributes.js");
 var trueFunc = BaseFuncs.trueFunc;
