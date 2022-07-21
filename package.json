@@ -1,13 +1,13 @@
 {
   "name": "ch-scrape",
-  "version": "0.16.4",
+  "version": "0.17.0",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
-  "main": "index.js",
+  "main": "lib/cli.js",
   "bin": {
-    "ch-scrape": "lib/cli.js"
+    "ch-scrape": "lib/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --timeout=5m"
   },
   "files": [
     "lib",
@@ -61,5 +61,8 @@
     "string-format": "^2.0.0",
     "url-parse": "^1.5.10",
     "util-is-email": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^4.3.1"
   }
 }

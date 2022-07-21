@@ -1,4 +1,4 @@
-const downloader = require('./index');
+const downloader = require('./lib/cli');
 
 (async () => {
   console.time('took');
