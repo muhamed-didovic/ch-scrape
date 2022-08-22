@@ -1,8 +1,6 @@
 const test = require('ava').serial
 const { cli, prompt } = require('../lib/cli')
 
-const execa = require("execa");
-
 const Bluebird = require('bluebird')
 Bluebird.config({ longStackTraces: true })
 global.Promise = Bluebird
