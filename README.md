@@ -28,11 +28,11 @@ Options
   --password, -p    Your password.
   --directory, -d   Directory to save.
   --type, -t        source|course Type of download.
-  --videos, -v      Include videos if available.
-  --subtitle, -s    Include subtitles if available.
-  --zip, -z         Include archive if available.
-  --code, -c        Include code if available.
-  --lang, -l        Include courses of certain language ('en', 'ru' or 'both')
+  --videos, -v      Include videos if available (options available: 'yes' or 'no', default is 'yes').
+  --subtitle, -s    Include subtitles if available (options available: 'yes' or 'no', default is 'no').
+  --zip, -z         Include archive if available (options available: 'yes' or 'no', default is 'no').
+  --code, -c        Include code if availabl (options available: 'yes' or 'no', default is 'no').
+  --lang, -l        Include courses of certain language, available options: 'English', 'Русский' and 'all'
   --concurrency, -cc
 
 Examples
