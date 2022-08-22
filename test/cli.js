@@ -7,7 +7,6 @@ global.Promise = Bluebird
 
 test('cli options', async t => {
   const { flags, input } = cli
-  // console.log('prompt: ', { flags, input });
 
   /*flags: {
     all: false,
@@ -201,7 +200,6 @@ test('prompt - download source with some options', async t => {
   t.is(p.zip, 'no');
 })
 
-
 test('prompt - error with all option and url', async t => {
   await t.throwsAsync(async () => {
     await prompt({
@@ -214,7 +212,6 @@ test('prompt - error with all option and url', async t => {
       subtitle: 'no',
       code: 'no',
       zip: 'no',
-      //videos: 'no',
       concurrency: 8,
       lang: 'Русский'
     })
