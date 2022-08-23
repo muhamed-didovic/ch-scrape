@@ -1,5 +1,455 @@
 [
   {
+    "second_title": "Продвинутые Темы JavaScript",
+    "title": "Advanced JavaScript Topics",
+    "value": "https://coursehunter.net/course/rasshirennye-temy-javascript"
+  },
+  {
+    "second_title": "UI UX от Figma до HTML CSS и JavaScript",
+    "title": "UI UX Design Hybrid from Figma to HTML CSS and JavaScript",
+    "value": "https://coursehunter.net/course/gibridnyy-dizayn-ui-ux-ot-figma-do-html-css-i-javascript"
+  },
+  {
+    "second_title": "React Hooks: от A до Я",
+    "title": "Complete React Hooks Course 2021: A - Z ( Scratch to React )",
+    "value": "https://coursehunter.net/course/polnyy-kurs-react-hooks-ot-a-do-ya"
+  },
+  {
+    "second_title": "Сайт Электронной Коммерции MERN Stack - React, Redux, Node.js",
+    "title": "MERN Stack Full Ecommerce Site - Using React, Redux, Node.js",
+    "value": "https://coursehunter.net/course/sayt-elektronnoy-kommercii-mern-stack-ispolzuya-react-redux-node-js"
+  },
+  {
+    "second_title": "[ENG] NestJS - Создание API Реального Проекта с Нуля",
+    "title": "NestJS - Building Real Project API From Scratch",
+    "value": "https://coursehunter.net/course/nestjs-sozdanie-api-realnogo-proekta-s-nulya"
+  },
+  {
+    "second_title": "Ускоренный курс Go для начинающих (Golang)",
+    "title": "Learn Go for Beginners Crash Course (Golang)",
+    "value": "https://coursehunter.net/course/izuchite-uskorennyy-kurs-go-dlya-nachinayushchih-golang"
+  },
+  {
+    "second_title": "Основы OAuth 2.0",
+    "title": "The Nuts and Bolts of OAuth 2.0",
+    "value": "https://coursehunter.net/course/osnovy-oauth-2-0"
+  },
+  {
+    "second_title": "Платежная Интеграция Laravel с Braintree, Stripe и PayPal",
+    "title": "Laravel Payment Integration with Braintree, Stripe & PayPal",
+    "value": "https://coursehunter.net/course/platezhnaya-integraciya-laravel-s-braintree-stripe-i-paypal"
+  },
+  {
+    "second_title": "Блокчейн от А до Я: Узнайте, как Построить Свой Первый Блокчейн",
+    "title": "Blockchain A-Z: Learn How To Build Your First Blockchain",
+    "value": "https://coursehunter.net/course/blokcheyn-ot-a-do-ya-uznayte-kak-postroit-svoy-pervyy-blokcheyn"
+  },
+  {
+    "second_title": "Введение в UX: Создавайте Информационные Панели с Brain Science",
+    "title": "Intro to UX: Design Effective Dashboards With Brain Science",
+    "value": "https://coursehunter.net/course/vvedenie-v-ux-sozdavayte-informacionnye-paneli-s-brain-science"
+  },
+  {
+    "second_title": "Веб-безопасность: Инъекционные атаки с Java и Spring Boot",
+    "title": "Web security: Injection Attacks with Java & Spring Boot",
+    "value": "https://coursehunter.net/course/veb-bezopasnost-ataki-putem-vnedreniya-s-pomoshchyu-java-i-spring-boot"
+  },
+  {
+    "second_title": "Java Streams API - Руководство Разработчика ",
+    "title": "Java Streams API Developer Guide",
+    "value": "https://coursehunter.net/course/rukovodstvo-razrabotchika-java-streams-api"
+  },
+  {
+    "second_title": "Параллелизм в Go (Golang)",
+    "title": "Concurrency in Go (Golang)",
+    "value": "https://coursehunter.net/course/parallelizm-v-go-golang"
+  },
+  {
+    "second_title": "Создавайте RESTFUL API, используя Kotlin и Spring Boot",
+    "title": "Build RESTFUL APIs using Kotlin and Spring Boot",
+    "value": "https://coursehunter.net/course/sozdavayte-restful-api-ispolzuya-kotlin-i-spring-boot"
+  },
+  {
+    "second_title": "Kubernetes для разработчиков",
+    "title": "Kubernetes для разработчиков",
+    "value": "https://coursehunter.net/course/kubernetes-dlya-razrabotchikov"
+  },
+  {
+    "second_title": "Маркетинг мобильных приложений",
+    "title": "Маркетинг мобильных приложений",
+    "value": "https://coursehunter.net/course/marketing-mobilnyh-prilozheniy"
+  },
+  {
+    "second_title": "Аналитика мобильных приложений",
+    "title": "Аналитика мобильных приложений",
+    "value": "https://coursehunter.net/course/analitika-mobilnyh-prilozheniy"
+  },
+  {
+    "second_title": "Системы, основанные на знаниях",
+    "title": "Системы, основанные на знаниях",
+    "value": "https://coursehunter.net/course/sistemy-osnovannye-na-znaniyah"
+  },
+  {
+    "second_title": "Ansible: Infrastructure as Code",
+    "title": "Ansible: Infrastructure as Code",
+    "value": "https://coursehunter.net/course/ansible-infrastructure-as-code"
+  },
+  {
+    "second_title": "Конференция «Будущее дизайн-систем»",
+    "title": "The Future of Design Systems Conference",
+    "value": "https://coursehunter.net/course/konferenciya-budushchee-dizayn-sistem"
+  },
+  {
+    "second_title": "Python с нуля",
+    "title": "Курс питон для начинающих",
+    "value": "https://coursehunter.net/course/python-s-nulya"
+  },
+  {
+    "second_title": "Последний курс по алгоритмам, который вам понадобится",
+    "title": "The Last Algorithms Course You'll Need",
+    "value": "https://coursehunter.net/course/posledniy-kurs-po-algoritmam-kotoryy-vam-ponadobitsya"
+  },
+  {
+    "second_title": "Python: Работа с API и фреймворками",
+    "title": "Python: Работа с API и фреймворками",
+    "value": "https://coursehunter.net/course/python-rabota-s-api-i-freymvorkami"
+  },
+  {
+    "second_title": "AWS База. Администрирование и разработка в облачных системах",
+    "title": "AWS База. Администрирование и разработка в облачных системах",
+    "value": "https://coursehunter.net/course/aws-baza-administrirovanie-i-razrabotka-v-oblachnyh-sistemah"
+  },
+  {
+    "second_title": "Ultimate C++, часть 2: средний уровень",
+    "title": "Ultimate C++ Part 2: Intermediate",
+    "value": "https://coursehunter.net/course/ultimate-c-chast-2-sredniy-uroven"
+  },
+  {
+    "second_title": "Ultimate C++, часть 1: основы",
+    "title": "Ultimate C++ Part 1: Fundamentals",
+    "value": "https://coursehunter.net/course/ultimate-c-chast-1-osnovy"
+  },
+  {
+    "second_title": "IT - Project Management: управление проектами в области информационных технологий",
+    "title": "IT - Project Management: управление проектами в области информационных технологий",
+    "value": "https://coursehunter.net/course/it-project-management-upravlenie-proektami-v-oblasti-informacionnyh-tehnologiy"
+  },
+  {
+    "second_title": "Поисковые системы и конкурентная разведка в Интернете",
+    "title": "Поисковые системы и конкурентная разведка в Интернете",
+    "value": "https://coursehunter.net/course/poiskovye-sistemy-i-konkurentnaya-razvedka-v-internete"
+  },
+  {
+    "second_title": "MODX: Большой курс по разработке интернет-магазинов",
+    "title": "MODX: Большой курс по разработке интернет-магазинов",
+    "value": "https://coursehunter.net/course/modx-bolshoy-kurs-po-razrabotke-internet-magazinov"
+  },
+  {
+    "second_title": "Docker: from zero to hero",
+    "title": "Docker: from zero to hero",
+    "value": "https://coursehunter.net/course/docker-from-zero-to-hero"
+  },
+  {
+    "second_title": "Тюнинг и масштабирование проекта на MySQL",
+    "title": "Тюнинг и масштабирование проекта на MySQL",
+    "value": "https://coursehunter.net/course/tyuning-i-masshtabirovanie-proekta-na-mysql"
+  },
+  {
+    "second_title": "React - Полный Курс по React",
+    "title": "React - Полный Курс по React",
+    "value": "https://coursehunter.net/course/react-polnyy-kurs-po-react"
+  },
+  {
+    "second_title": "Продвинутый Remix",
+    "title": "Advanced Remix",
+    "value": "https://coursehunter.net/course/prodvinutyy-remix"
+  },
+  {
+    "second_title": "AWS Cloud Practitioner (CLF-C01) | Полное введение в AWS",
+    "title": "AWS Cloud Practitioner (CLF-C01) | Complete AWS Introduction",
+    "value": "https://coursehunter.net/course/aws-cloud-practitioner-clf-c01-polnoe-vvedenie-v-aws"
+  },
+  {
+    "second_title": "Основы Remix",
+    "title": "Remix Fundamentals",
+    "value": "https://coursehunter.net/course/osnovy-remix"
+  },
+  {
+    "second_title": "Создавайте Полиморфные Компоненты с помощью React и Typescript",
+    "title": "Build Polymorphic Components with React and Typescript",
+    "value": "https://coursehunter.net/course/sozdavayte-polimorfnye-komponenty-s-pomoshchyu-react-i-typescript"
+  },
+  {
+    "second_title": "Торговля криптовалютой: Мастер-класс по Техническому Анализу",
+    "title": "Cryptocurrency Trading: Technical Analysis Masterclass",
+    "value": "https://coursehunter.net/course/torgovlya-kriptovalyutoy-master-klass-po-tehnicheskomu-analizu"
+  },
+  {
+    "second_title": "Создание современных распределенных систем с помощью Java",
+    "title": "Building Modern Distributed Systems with Java",
+    "value": "https://coursehunter.net/course/sozdanie-sovremennyh-raspredelennyh-sistem-s-pomoshchyu-java"
+  },
+  {
+    "second_title": "Изучите Spring framework, Spring Boot, REST, JPA, Hibernate",
+    "title": "Master Spring framework, Spring Boot, REST, JPA, Hibernate",
+    "value": "https://coursehunter.net/course/izuchi-freymvorki-spring-spring-boot-rest-jpa-hibernate"
+  },
+  {
+    "second_title": "Полное Руководство по приему платежей с Ruby on Rails 6 (Stripe API)",
+    "title": "Complete Guide to Payments with Ruby on Rails 6 (Stripe API)",
+    "value": "https://coursehunter.net/course/polnoe-rukovodstvo-po-platezham-s-ruby-on-rails-6-stripe-api"
+  },
+  {
+    "second_title": "RabbitMQ Python",
+    "title": "RabbitMQ Python",
+    "value": "https://coursehunter.net/course/rabbitmq-python"
+  },
+  {
+    "second_title": "Профессиональный курс iOS-разработки - UIKit",
+    "title": "The Swift Arcade Professional iOS Development Course - UIKit",
+    "value": "https://coursehunter.net/course/kurs-razrabotki-swift-arcade-professional-dlya-ios-uikit"
+  },
+  {
+    "second_title": "Bug Bounty - Продвинутое Руководство по Поиску Ошибок",
+    "title": "Bug Bounty - An Advanced Guide to Finding Good Bugs",
+    "value": "https://coursehunter.net/course/bug-bounty-rasshirennoe-rukovodstvo-po-poisku-horoshih-oshibok"
+  },
+  {
+    "second_title": "Полный курс по Solidity — Блокчейн — от Нуля к Эксперту",
+    "title": "The Complete Solidity Course - Blockchain - Zero to Expert",
+    "value": "https://coursehunter.net/course/polnyy-kurs-po-solidity-blokcheyn-ot-nulya-k-ekspertu"
+  },
+  {
+    "second_title": "Управление продуктами для ИИ и Науке о Данных",
+    "title": "The Product Management for AI & Data Science Course",
+    "value": "https://coursehunter.net/course/upravlenie-produktami-dlya-ii-i-nauka-o-dannyh"
+  },
+  {
+    "second_title": "Веб-разработка на Java (Под капотом)",
+    "title": "Java Web Development Under The Hood",
+    "value": "https://coursehunter.net/course/veb-razrabotka-na-java-pod-kapotom"
+  },
+  {
+    "second_title": "Blazor Bootcamp - .NET 6 (WASM и Server)",
+    "title": "Blazor Bootcamp - .NET 6 (WASM and Server)",
+    "value": "https://coursehunter.net/course/blazor-net-6-wasm-i-server"
+  },
+  {
+    "second_title": "Размышления за пределами Java 8",
+    "title": "Thinking Beyond Java 8",
+    "value": "https://coursehunter.net/course/mysli-za-predelami-java-8"
+  },
+  {
+    "second_title": "Создайте Полноценную Систему Регистрации и Входа с помощью PHP MVC",
+    "title": "Build a Complete Registration and Login System using PHP MVC",
+    "value": "https://coursehunter.net/course/sozdayte-polnocennuyu-sistemu-registracii-i-vhoda-s-pomoshchyu-php-mvc"
+  },
+  {
+    "second_title": "API в PHP: От Новичка к Профи",
+    "title": "APIs in PHP: from Basic to Advanced",
+    "value": "https://coursehunter.net/course/api-v-php-ot-novichka-k-profi"
+  },
+  {
+    "second_title": "Изучите стек MERN с WebRTC и SocketIO создавая клон Discord",
+    "title": "Discord Clone - Learn MERN Stack with WebRTC and SocketIO",
+    "value": "https://coursehunter.net/course/izuchite-stek-mern-s-pomoshchyu-webrtc-i-socketio-sozdavaya-klon-discord"
+  },
+  {
+    "second_title": "Приложение для Аренды Автомобилей со стеком MERN: React, Redux, Node",
+    "title": "MERN Stack Car Rental Application 2021 : React ,Redux ,Node",
+    "value": "https://coursehunter.net/course/prilozhenie-dlya-arendy-avtomobiley-mern-stack-2021-react-redux-node"
+  },
+  {
+    "second_title": "Балансировка нагрузки веб-сервера / приложения Linux используя Nginx",
+    "title": "Linux Web Server/Web Application Load Balancing using Nginx",
+    "value": "https://coursehunter.net/course/balansirovka-nagruzki-veb-servera-prilozheniya-linux-s-ispolzovaniem-nginx"
+  },
+  {
+    "second_title": "Полный курс веб-разработки NFT - от Нуля до Эксперта",
+    "title": "The Complete NFT Web Development Course - Zero To Expert",
+    "value": "https://coursehunter.net/course/polnyy-kurs-veb-razrabotki-nft-ot-nulya-do-eksperta"
+  },
+  {
+    "second_title": "Приложение Бронирования билетов в Кино с помощью Xamarin Forms",
+    "title": "Build Cinema Ticket Reservation App with Xamarin Forms",
+    "value": "https://coursehunter.net/course/prilozhenie-bronirovaniya-biletov-v-kino-s-pomoshchyu-xamarin-forms"
+  },
+  {
+    "second_title": "Основы Покерной математики для Безлимитного Холдема",
+    "title": "Essential Poker Math for No Limit Holdem",
+    "value": "https://coursehunter.net/course/osnovy-pokernoy-matematiki-dlya-bezlimitnogo-holdema"
+  },
+  {
+    "second_title": "Конкурентное и Параллельное Программирование на Python",
+    "title": "Concurrent and Parallel Programming in Python",
+    "value": "https://coursehunter.net/course/soglasovannoe-i-parallelnoe-programmirovanie-na-python"
+  },
+  {
+    "second_title": "Современный Erlang для Начинающих",
+    "title": "Modern Erlang for Beginners",
+    "value": "https://coursehunter.net/course/sovremennyy-erlang-dlya-nachinayushchih"
+  },
+  {
+    "second_title": "Cucumber Playwright и TypeScript: Фреймворк автоматизированного тестирования",
+    "title": "Build a Cucumber Playwright Typescript Automation Framework",
+    "value": "https://coursehunter.net/course/cozdanie-sredy-avtomatizacii-cucumber-playwright-i-typescript"
+  },
+  {
+    "second_title": "Windbg - Руководство по продвинутой отладке Windows",
+    "title": "Windbg - A complete guide for Advanced Windows Debugging",
+    "value": "https://coursehunter.net/course/windbg-rukovodstvo-po-rasshirennoy-otladke-windows"
+  },
+  {
+    "second_title": "Стресс Детокс: Как лидеру управлять стрессом",
+    "title": "The Stress Detox: A Stress Management Framework for Leaders",
+    "value": "https://coursehunter.net/course/stress-detoks-kak-lideru-upravlyat-stressom"
+  },
+  {
+    "second_title": "Создание приложений с помощью React 17 и ASP.NET Core 6",
+    "title": "Building Applications with React 17 and ASP.NET Core 6",
+    "value": "https://coursehunter.net/course/sozdanie-prilozheniy-s-pomoshchyu-react-17-i-asp-net-core-6"
+  },
+  {
+    "second_title": "Станьте экспертом Shopify (От Новичка к Профи)",
+    "title": "How To Become A Shopify Expert (From Zero To Hero !)",
+    "value": "https://coursehunter.net/course/stan-ekspertom-shopify-ot-novichka-k-profi"
+  },
+  {
+    "second_title": "Машинное обучение: Обработка естественного языка в Python (V2)",
+    "title": "Machine Learning: Natural Language Processing in Python (V2)",
+    "value": "https://coursehunter.net/course/mashinnoe-obuchenie-obrabotka-estestvennogo-yazyka-v-python-v2"
+  },
+  {
+    "second_title": "Аналитика данных для продукт-менеджеров",
+    "title": "Become a Data Driven Product Manager",
+    "value": "https://coursehunter.net/course/analitika-dannyh-dlya-prodakt-menedzherov"
+  },
+  {
+    "second_title": "Полный базовый курс по торговле акциями",
+    "title": "The Complete Foundation Stock Trading Course",
+    "value": "https://coursehunter.net/course/polnyy-bazovyy-kurs-po-torgovle-akciyami"
+  },
+  {
+    "second_title": "Полный курс по Google Apps Script - С новой IDE (Более 100 примеров)",
+    "title": "Google Apps Script Complete Course New IDE 100+ Examples",
+    "value": "https://coursehunter.net/course/polnyy-kurs-po-google-apps-script-s-novoy-ide-bolee-100-primerov"
+  },
+  {
+    "second_title": "Автоматизированное тестирование с помощью Playwright JS с нуля",
+    "title": "Playwright JS Automation Testing from Scratch with Framework",
+    "value": "https://coursehunter.net/course/avtomatizirovannoe-testirovanie-s-pomoshchyu-playwright-js-s-nulya"
+  },
+  {
+    "second_title": "Внутреннее устройство AndroidOS / AOSP Automotive Development",
+    "title": "Android OS Internals / AOSP Automotive Development",
+    "value": "https://coursehunter.net/course/vnutrennee-ustroystvo-androidos-razrabotka-aosp-automotive"
+  },
+  {
+    "second_title": "Шаблоны проектирования с Spring WebFlux",
+    "title": "Design Patterns With Spring WebFlux",
+    "value": "https://coursehunter.net/course/shablony-proektirovaniya-v-spring-webflux"
+  },
+  {
+    "second_title": "Automotive SPICE в деталях",
+    "title": "Automotive SPICE in detail",
+    "value": "https://coursehunter.net/course/automotive-spice-v-detalyah"
+  },
+  {
+    "second_title": "Twilio/Node - Система бронирования по SMS с Twilio и Node.Js",
+    "title": "Twilio / Node - SMS booking system using Twilio and Node.Js",
+    "value": "https://coursehunter.net/course/twilio-node-sistema-bronirovaniya-po-sms-s-twilio-i-node-js"
+  },
+  {
+    "second_title": "Обработка платежей и подписок в Laravel: PayPal и Stripe",
+    "title": "Laravel Payment and Subscription Processing: PayPal & Stripe",
+    "value": "https://coursehunter.net/course/obrabotka-platezhey-i-podpiski-laravel-paypal-i-stripe"
+  },
+  {
+    "second_title": "Bootcamp по AWS Lambda и бессерверной архитектуре (5 приложений)",
+    "title": "AWS Lambda & Serverless Architecture Bootcamp (Build 5 Apps)",
+    "value": "https://coursehunter.net/course/uchebnyy-kurs-po-aws-lambda-i-besservernoy-arhitekture-sborka-5-prilozheniy"
+  },
+  {
+    "second_title": "Основы Hibernate и Java Persistence API (JPA)",
+    "title": "Hibernate and Java Persistence API (JPA) Fundamentals",
+    "value": "https://coursehunter.net/course/osnovy-hibernate-i-java-persistence-api-jpa"
+  },
+  {
+    "second_title": "Даркнет, курс анонимности, конфиденциальности и безопасности",
+    "title": "The Ultimate Dark Web, Anonymity, Privacy & Security Course",
+    "value": "https://coursehunter.net/course/darknet-anonimnost-konfidencialnost-i-bezopasnost"
+  },
+  {
+    "second_title": "Наиболее полный курс разработчика Node.Js",
+    "title": "The Definitive Node.Js Developer Course",
+    "value": "https://coursehunter.net/course/naibolee-polnyy-kurs-razrabotchika-node-js"
+  },
+  {
+    "second_title": "CSS Shapes: Веб-сайты следующего поколения",
+    "title": "Advance CSS Shapes: Next Generation Websites ",
+    "value": "https://coursehunter.net/course/usovershenstvovannye-formy-css-veb-sayty-sleduyushchego-pokoleniya"
+  },
+  {
+    "second_title": "Архитектура и реализация микросервисов в .NET 5",
+    "title": "Microservices Architecture and Implementation on .NET 5",
+    "value": "https://coursehunter.net/course/arhitektura-i-realizaciya-mikroservisov-v-net-5"
+  },
+  {
+    "second_title": "Приложение для интернет-магазина iOS 13",
+    "title": "iOS 13 Online Shop Application, Build e-Market, for sale",
+    "value": "https://coursehunter.net/course/prilozhenie-dlya-internet-magazina-ios-13"
+  },
+  {
+    "second_title": "Курс управления проектами: От новичка к менеджеру по проектам",
+    "title": "The Project Management Course: Beginner to PROject Manager",
+    "value": "https://coursehunter.net/course/kurs-upravleniya-proektami-ot-novichka-k-menedzheru-proektov"
+  },
+  {
+    "second_title": "Full Stack изоморфный JavaScript с Vue.js и Node.js",
+    "title": "Full Stack Isomorphic JavaScript with Vue.js & Node.js",
+    "value": "https://coursehunter.net/course/polnyy-stek-izomorfnogo-javascript-s-vue-js-i-node-js"
+  },
+  {
+    "second_title": "Управления базой данных (5): Индексирование, B Trees, B+Trees ",
+    "title": "Database Management Final Part (5): Indexing,B Trees,B+ Trees",
+    "value": "https://coursehunter.net/course/upravleniya-bazoy-dannyh-5-indeksirovanie-b-derevya-b-derevya"
+  },
+  {
+    "second_title": "Практический опыт Istio для Kubernetes",
+    "title": "Istio Hands-On for Kubernetes",
+    "value": "https://coursehunter.net/course/prakticheskiy-opyt-istio-dlya-kubernetes"
+  },
+  {
+    "second_title": "Ruby on Rails - 2020. Создание Интернет Магазина.",
+    "title": "Ruby on Rails - 2020. Создание Интернет Магазина.",
+    "value": "https://coursehunter.net/course/ruby-on-rails-2020-sozdanie-internet-magazina"
+  },
+  {
+    "second_title": "Ruby on Rails 6 - 2020. Создание собственного веб приложения",
+    "title": "Ruby on Rails 6 - 2020. Создание собственного веб приложения",
+    "value": "https://coursehunter.net/course/ruby-on-rails-6-2020-sozdanie-sobstvennogo-veb-prilozheniya"
+  },
+  {
+    "second_title": "AWS DevOps: Мастер-класс по CI/CD",
+    "title": "AWS DevOps : A CI/CD Masterclass 2021",
+    "value": "https://coursehunter.net/course/aws-devops-master-klass-po-ci-cd"
+  },
+  {
+    "second_title": "Vue 3, Nuxt.js и NestJS: Краткое руководство - Продвинутый уровень",
+    "title": "Vue 3, Nuxt.js and NestJS: A Rapid Guide - Advanced",
+    "value": "https://coursehunter.net/course/vue-3-nuxt-js-i-nestjs-kratkoe-rukovodstvo-prodvinutyy-uroven"
+  },
+  {
+    "second_title": "Полноценный веб и мобильный дизайнер в 2022 году: UI/UX, Figma и др.",
+    "title": "Complete Web & Mobile Designer in 2022: UI/UX, Figma, +more",
+    "value": "https://coursehunter.net/course/polnocennyy-veb-dizayner-i-mobilnyy-dizayner-v-2022-godu-ui-ux-figma-i-dr"
+  },
+  {
+    "second_title": "Наука о данных для бизнеса | 6 реальных примеров",
+    "title": "Data Science for Business | 6 Real-world Case Studies",
+    "value": "https://coursehunter.net/course/nauka-o-dannyh-dlya-biznesa-6-realnyh-primerov"
+  },
+  {
     "second_title": "Овладейте Agile Scrum: Полное моделирование проекта + сертификация",
     "title": "Agile Scrum Mastery: Full Project Simulation + Certification",
     "value": "https://coursehunter.net/course/agile-scrum-mastery-polnoe-modelirovanie-proekta-sertifikaciya"
@@ -718,6 +1168,11 @@
     "second_title": "CSS-анимации",
     "title": "CSS Animations",
     "value": "https://coursehunter.net/course/css-animacii"
+  },
+  {
+    "second_title": "Spring Boot E-Commerce",
+    "title": "Spring Boot E-Commerce Ultimate Course",
+    "value": "https://coursehunter.net/course/polnocennyy-kurs-po-elektronnoy-kommercii-v-spring-boot"
   },
   {
     "second_title": "Модульное тестирование JavaScript - практическое руководство",
@@ -9685,11 +10140,6 @@
     "value": "https://coursehunter.net/course/ios-razrabotchik-prodvinutyy-kurs-v-2-0-chast-1"
   },
   {
-    "second_title": "Team Lead 2.0 (Часть 1-4)",
-    "title": "Team Lead 2.0",
-    "value": "https://coursehunter.net/course/team-lead-2-0-chast-1"
-  },
-  {
     "second_title": "Разработка приложений с использованием SPRING и Spring MVC/REST",
     "title": "Разработка приложений с использованием SPRING и Spring MVC/REST",
     "value": "https://coursehunter.net/course/razrabotka-prilozheniy-s-ispolzovaniem-spring-i-spring-mvc-rest"
@@ -9753,11 +10203,6 @@
     "second_title": "Подготовительный курс по C++ разработке",
     "title": "Подготовительный курс по C++ разработке",
     "value": "https://coursehunter.net/course/podgotovitelnyy-kurs-po-c-razrabotke"
-  },
-  {
-    "second_title": "Data Engineer",
-    "title": "Data Engineer",
-    "value": "https://coursehunter.net/course/data-engineer"
   },
   {
     "second_title": "iOS разработчик - Практика собеседования",
@@ -10565,11 +11010,6 @@
     "value": "https://coursehunter.net/course/client-side-graphql-v-react"
   },
   {
-    "second_title": "Базы данных (Часть 1-6)",
-    "title": "Базы данных",
-    "value": "https://coursehunter.net/course/bazy-dannyh-chast-1"
-  },
-  {
     "second_title": "Математика в геймдизайне: теория и практика",
     "title": "Математика в геймдизайне: теория и практика",
     "value": "https://coursehunter.net/course/matematika-v-geymdizayne-teoriya-i-praktika"
@@ -11358,11 +11798,6 @@
     "second_title": "Основы Spring Framework",
     "title": "Основы Spring Framework",
     "value": "https://coursehunter.net/course/osnovy-spring-framework"
-  },
-  {
-    "second_title": "Архитектор высоких нагрузок (Часть 1-4)",
-    "title": "Архитектор высоких нагрузок",
-    "value": "https://coursehunter.net/course/arhitektor-vysokih-nagruzok"
   },
   {
     "second_title": "FullStack React с NextJS",
@@ -15058,11 +15493,6 @@
     "second_title": "JavaScript. Полное руководство для современной веб-разработки",
     "title": "JavaScript. Полное руководство для современной веб-разработки",
     "value": "https://coursehunter.net/course/javascript-polnoe-rukovodstvo-dlya-sovremennoy-veb-razrabotki"
-  },
-  {
-    "second_title": "MS SQL Server разработчик. Часть 1-4",
-    "title": "MS SQL Server разработчик",
-    "value": "https://coursehunter.net/course/ms-sql-server-razrabotchik-chast-1"
   },
   {
     "second_title": "Дизайн в IOS 11",
@@ -20940,14 +21370,14 @@
     "value": "https://coursehunter.net/course/udemy-php-for-beginners-become-a-php-master"
   },
   {
+    "second_title": "Полный курс Javа",
+    "title": "The Complete Java Developer",
+    "value": "https://coursehunter.net/course/java-developer"
+  },
+  {
     "second_title": "Адаптивная типографика",
     "title": "Responsive Typography",
     "value": "https://coursehunter.net/course/frontendmasters-responsive-typography"
-  },
-  {
-    "second_title": "Тестирование Java для разработчиков",
-    "title": "Java Testing for Developers",
-    "value": "https://coursehunter.net/course/oreilly-java-testing-for-developers"
   },
   {
     "second_title": "Тестирование Java для разработчиков",

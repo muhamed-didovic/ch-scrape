@@ -39,7 +39,7 @@ Examples
   $ ch-scrape
   $ ch-scrape --all
   $ ch-scrape https://coursehunter.net/course/intermediate-typescript -t course
-  $ ch-scrape --all [-e user@mail.com] [-p password] [-t source-or-course] [-d path-to-directory] [-cc concurrency-number]
+  $ ch-scrape [--all] [-e user@mail.com] [-p password] [-t source|course] [-v yes|no] [-s yes|no] [-z yes|no] [-c yes|no] [-l English|Русский|all] [-d path-to-directory] [-cc concurrency-number]
 ```
 
 ## License
