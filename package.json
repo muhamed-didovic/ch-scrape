@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.17.3",
+  "version": "0.17.4",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -14,11 +14,15 @@
     "src"
   ],
   "keywords": [
-    "download",
-    "downloader",
-    "nodejs",
+    "coursehunter",
+    "coursehunter-download",
     "coursehunter-downloader",
-    "coursehunter"
+    "coursehunter-scrape",
+    "coursehunter-scraper",
+    "coursehunter.net-download",
+    "coursehunter.net-downloader",
+    "coursehunter.net-scrape",
+    "coursehunter.net-scraper"
   ],
   "author": "Muhamed Didovic (github.com/muhamed-didovic)",
   "repository": {
@@ -63,6 +67,6 @@
     "util-is-email": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^4.3.1"
+    "ava": "^4.3.3"
   }
 }
