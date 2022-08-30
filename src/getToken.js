@@ -13,7 +13,7 @@ const getToken = async (e_mail, password) => {
     })
 
     if (!res.data.token) throw new Error('not token from response')
-    return res.headers['set-cookie'][0] + '; accessToken=' + res.data.token;
+    return res.headers['set-cookie'][1] + '; accessToken=' + res.data.token;
   } catch (error) {
     throw new Error(error.response.data);
   }
