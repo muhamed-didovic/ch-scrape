@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -59,7 +59,7 @@
     "nth-check": "^2.1.1",
     "ora": "^5.4.1",
     "prompts": "^2.4.2",
-    "regenerator-runtime": "^0.13.10",
+    "regenerator-runtime": "^0.13.11",
     "request": "latest",
     "request-progress": "^3.0.0",
     "string-format": "^2.0.0",
@@ -67,6 +67,6 @@
     "util-is-email": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^4.3.3"
+    "ava": "^5.1.0"
   }
 }
