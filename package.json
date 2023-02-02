@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.18.5",
+  "version": "0.19.0",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -36,7 +36,7 @@
     "async-http-request": "^1.0.4",
     "async-request": "^1.2.0",
     "axios": "^0.27.2",
-    "axios-retry": "^3.3.1",
+    "axios-retry": "^3.4.0",
     "bluebird": "^3.7.2",
     "boolbase": "^1.0.0",
     "cheerio": "^1.0.0-rc.12",
