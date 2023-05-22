@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.19.3",
+  "version": "0.19.4",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -32,12 +32,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "agentkeepalive": "^4.2.1",
+    "agentkeepalive": "^4.3.0",
     "app-module-path": "^2.2.0",
     "async-http-request": "^1.0.4",
     "async-request": "^1.2.0",
     "axios": "^0.27.2",
-    "axios-retry": "^3.4.0",
+    "axios-retry": "^3.5.0",
     "bluebird": "^3.7.2",
     "boolbase": "^1.0.0",
     "cheerio": "^1.0.0-rc.12",
@@ -50,7 +50,7 @@
     "entities": "^1.1.2",
     "es6-promise-pool": "^2.5.0",
     "form-data": "^4.0.0",
-    "fs-extra": "^11.1.0",
+    "fs-extra": "^11.1.1",
     "fuse.js": "^6.6.2",
     "inherits": "^2.0.4",
     "is-valid-path": "^0.1.1",
