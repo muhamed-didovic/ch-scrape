@@ -32,7 +32,9 @@ const getToken = async (email, password) => {
     })
 
     // console.log('headers', res.status, res.headers);
-    let [xsrfToken,] = res.headers['set-cookie']
+    // console.log('set-cookie', res.headers['set-cookie']);
+    let [,xsrfToken] = res.headers['set-cookie']
+    // console.log('xsrfToken', xsrfToken);
     return xsrfToken.split(';')[0]; // accessToken=' + res.data.token;
   } catch (error) {
     throw new Error(error.response.data);
