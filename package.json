@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.20.3",
+  "version": "0.20.4",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -50,8 +50,8 @@
     "entities": "^1.1.2",
     "es6-promise-pool": "^2.5.0",
     "form-data": "^4.0.0",
-    "fs-extra": "^11.1.1",
-    "fuse.js": "^6.6.2",
+    "fs-extra": "^11.2.0",
+    "fuse.js": "^7.0.0",
     "inherits": "^2.0.4",
     "is-valid-path": "^0.1.1",
     "loadash": "^1.0.0",
@@ -69,6 +69,6 @@
     "util-is-email": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^5.3.1"
+    "ava": "^6.0.1"
   }
 }
