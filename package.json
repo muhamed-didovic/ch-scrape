@@ -1,6 +1,6 @@
 {
   "name": "ch-scrape",
-  "version": "0.20.5",
+  "version": "0.20.6",
   "description": "Scrape videos (courses) from coursehunter.net for pro members into file",
   "main": "lib/cli.js",
   "bin": {
@@ -69,6 +69,6 @@
     "util-is-email": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^6.0.1"
+    "ava": "^6.1.1"
   }
 }
